@@ -1,12 +1,18 @@
 import React from "react";
+import {Link} from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
   return (
     <header>
       <h2>Devmountain Eatery</h2>
       <nav>
-          <button>Home</button>
-          <button>Add Recipe</button>
+          <Link to="">
+            <button>Home</button>
+          </Link>
+          <Link to="/newRecipe">
+            <button>Add Recipe</button>
+          </Link>
       </nav>
     </header>
   );
