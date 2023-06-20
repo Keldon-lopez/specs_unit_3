@@ -17,7 +17,6 @@ function App() {
       </Routes>
       {/* This is where you will code for some of Part 1. */}
       <Footer />
-      <h1>HI</h1>
     </div>
   );
 }
