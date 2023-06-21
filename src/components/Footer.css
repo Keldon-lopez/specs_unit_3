@@ -1,7 +1,6 @@
 .footerContainer {
     background-color: #3e3e3e;
     display: flex;
-    width: 100vw;
     justify-content: center;
 }
 Footer {

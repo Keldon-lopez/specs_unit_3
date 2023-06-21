@@ -1,0 +1,27 @@
+.recipeCardsContainer{
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#Search{
+    margin-top: 2vh;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #f6ded0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+#searchAndRecipeContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+}
+input{
+    border-width: 0;
+    background-color: #f6ded0;
+    border-radius: 10px;
+}

@@ -1,0 +1,16 @@
+.adBanner{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: center;
+}
+h1{
+    color: orange;
+    font-size:50px;
+}
+.adBannerButton{
+    font-size: large;
+    background-color: #578a8b;
+}
