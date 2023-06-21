@@ -8,6 +8,11 @@ import { ImSearch } from "react-icons/im";
 
 const HomeScreen = () => {
   const [recipes, setRecipes] = useState("");
+  const [searchedRecipes, setSearchedRecipes] = useState("");
+
+  const searchRecipeHandler = (event) => {
+    console.log(event.target.value)
+  }
 
   const getRecipe = () => {
     axios.get("https://recipes.devmountain.com/recipes").then((res) => {
@@ -25,7 +30,7 @@ const HomeScreen = () => {
       <div id="searchAndRecipeContainer">
         <div id="Search">
           <ImSearch color="orange" />
-          <input type="text" placeholder="Search For A Recipe"></input>
+          <input type="text" placeholder="Search For A Recipe" onChange={searchRecipeHandler}></input>
         </div>
         <div className="recipeCardsContainer">
           <RecipeCard />
