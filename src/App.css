@@ -21,3 +21,6 @@ time, mark, audio, video {
 }
 
 /* --------- Begin your CSS Below here --------- */
+button:hover {
+	background-color: #FEC0AA;
+}

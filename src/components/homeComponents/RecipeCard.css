@@ -1,12 +1,14 @@
 .recipeCardContainer{
     box-shadow: 5px 5px 5px gray;
-    width: 25%;
+    width: 25vh;
+    aspect-ratio: 1;
     text-align: center;
     padding-bottom:1% ;
     border-radius: 1%;
 }
 img{
-    height: 70%;
+    object-fit: cover;
+    height: 100%;
     width: 100%;
     border-radius: 1% 1% 0 0;
 }
