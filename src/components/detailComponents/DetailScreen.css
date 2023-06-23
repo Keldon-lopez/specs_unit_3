@@ -1,12 +1,47 @@
-.recipeBanner{
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-content: center;
+.recipeBanner {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: center;
 }
-h1{
-    color: orange;
-    font-size:50px;
+.recipeImage {
+  height: 35vh;
+  background-size: cover!important;
+  background-repeat: no-repeat!important;
+  background-position: center center!important;
+  text-align: center;
+  color: white;
+  font-size: x-large;
+  padding: 20px;
+}
+h1 {
+  color: orange;
+  font-size: 50px;
+}
+h2 {
+  font-size: 4vh;
+  font-weight: bold;
+  text-align: center;
+  margin: 4%;
+}
+#detailsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 1vh 1vw 1vh 1vw;
+}
+.detailsCard {
+  font-size: larger;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 3px 3px gray;
+  /* width: 25vh; */
+  text-align: left;
+  padding: 1% 1% 4% 1%;
+  border-radius: 1%;
+}
+p {
+  margin: 2%;
 }
