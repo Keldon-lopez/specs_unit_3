@@ -13,6 +13,7 @@ const DetailScreen = () => {
   useEffect(() => {
     axios.get(`https://recipes.devmountain.com/recipes/${id}`).then((res) => {
       setRecipe(res.data);
+      console.log(recipe)
     });
   }, []);
 
@@ -57,7 +58,7 @@ const DetailScreen = () => {
         </div>
         <div id="Instructions" className="detailsCard">
           <h2>Instructions</h2>
-          <p></p>
+          <p>{recipe.instructions}</p>
         </div>
       </div>
     </section>
