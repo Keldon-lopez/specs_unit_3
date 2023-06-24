@@ -7,7 +7,6 @@ import "./HomeScreen.css";
 import { ImSearch } from "react-icons/im";
 
 const HomeScreen = () => {
-  
   const [recipes, setRecipes] = useState([]);
   const [searchedRecipes, setSearchedRecipes] = useState("apple");
 
@@ -45,6 +44,7 @@ const HomeScreen = () => {
         <div id="Search">
           <ImSearch color="orange" />
           <input
+            id="searchBar"
             type="text"
             placeholder="Search For A Recipe"
             onKeyDown={searchEnterHandler}

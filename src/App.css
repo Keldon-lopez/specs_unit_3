@@ -24,3 +24,7 @@ time, mark, audio, video {
 button:hover {
 	background-color: #FEC0AA;
 }
+button{
+	border: 0;
+	color: white;
+}

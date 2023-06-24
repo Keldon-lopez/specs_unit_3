@@ -1,0 +1,75 @@
+input{
+    margin: 1% 0 1% 0;
+}
+.multiInputContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+.multiRadioContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+.radioContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+#formContainer{
+    display: flex;
+    justify-content: center;
+}
+#addRecipeForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    width: fit-content;
+    /* background-color: red; */
+}
+#ingredientSubmitContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 2%;
+    align-items: center;
+    /* background-color: blue; */
+    width: 100%;
+}
+#ingredientContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* background-color: yellow; */
+    justify-content: space-between;
+}
+#ingredientInputContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: green; */
+}
+#addIngredientButton{
+    background-color: #da7533;
+    width: fit-content;
+    font-size: large;
+}
+#instructionsInputContainer{
+    width: 100%;
+}
+#instructionsInput{
+    width: 96% ;
+    padding: 2%;
+    height: 10vh;
+    resize: none;
+}
+#submitRecipeButton{
+    margin-top: 1% ;
+    font-size: large;
+    background-color: #578a8b;
+    width: fit-content;
+}

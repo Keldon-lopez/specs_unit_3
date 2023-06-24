@@ -11,13 +11,7 @@ Header {
 nav{
     padding: 10px;
 }
-button{
-    border: 0;
-    color: white;
-}
 .NavButton{
     background-color: #da7533;
-    border: 0;
-    color: white;
     font-size: x-large;
 }
