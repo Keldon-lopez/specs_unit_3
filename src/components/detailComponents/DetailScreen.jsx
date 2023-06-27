@@ -15,7 +15,7 @@ const DetailScreen = () => {
       setRecipe(res.data);
       console.log(recipe)
     });
-  }, []);
+  }, [id,recipe]);
 
   return (
     <section>

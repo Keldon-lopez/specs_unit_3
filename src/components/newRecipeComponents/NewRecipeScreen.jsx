@@ -1,25 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
+import axios from "axios";
 import "./NewRecipeScreen.css";
+import IngredientListItem from "./IngredientListItem.jsx";
 
 const NewRecipeScreen = () => {
+  const [ingredients, setIngredients] = useState([]);
+  const [name, setName] = useState("");
+  const [quantity, setQuantity] = useState("");
+
   const formik = useFormik({
     initialValues: {
-      name: "",
-      imageUrl: "",
-      cookType: "",
+      recipeName: "",
+      imageURL: "",
+      type: "",
       prepTime: "",
       cookTime: "",
       serves: "",
-      ingredients: [""],
+      ingredients: ingredients,
       instructions: "",
     },
-    onSubmit: values => {
-      
-      console.log('Form Values', values)
-    }
+    onSubmit: (values) => {
+      values.ingredients = ingredients;
+      axios.post(`https://recipes.devmountain.com/recipes`, values);
+      console.log("Form Values", values);
+    },
   });
-  
+
+  const addIngredientHandler = () => {
+    setIngredients([...ingredients, { name, quantity }]);
+    setName("");
+    setQuantity("");
+  };
+
+  const ingredientsList = ingredients.map((ingredient, index) => {
+    return (
+      <IngredientListItem
+        key={index}
+        name={ingredient.name}
+        quantity={ingredient.quantity}
+      />
+    );
+  });
 
   return (
     <section id="newRecipeScreen">
@@ -28,31 +50,46 @@ const NewRecipeScreen = () => {
         <form id="addRecipeForm" onSubmit={formik.handleSubmit}>
           <div className="multiInputContainer">
             <input
-              name="name"
+              name="recipeName"
               type="text"
               placeholder="Name"
               onChange={formik.handleChange}
-              value={formik.values.name}
+              value={formik.values.recipeName}
             />
             <input
-              name="imageUrl"
+              name="imageURL"
               type="text"
               placeholder="Image URL"
               onChange={formik.handleChange}
-              value={formik.values.imageUrl}
+              value={formik.values.imageURL}
             />
           </div>
           <div className="multiRadioContainer">
             <div className="radioContainer">
-              <input name="cookTypeCook" type="radio" />
+              <input
+                name="type"
+                type="radio"
+                value="Cook"
+                onChange={formik.handleChange}
+              />
               <label htmlFor="CookTypeCook"> Cook</label>
             </div>
             <div className="radioContainer">
-              <input name="cookTypeBake" type="radio" />
+              <input
+                name="type"
+                type="radio"
+                value="Bake"
+                onChange={formik.handleChange}
+              />
               <label htmlFor="cookTypeBake"> Bake</label>
             </div>
             <div className="radioContainer">
-              <input name="cookTypeDrink" type="radio" />
+              <input
+                name="type"
+                type="radio"
+                value="Drink"
+                onChange={formik.handleChange}
+              />
               <label htmlFor="cookTypeDrink"> Drink</label>
             </div>
           </div>
@@ -85,21 +122,32 @@ const NewRecipeScreen = () => {
           <div id="ingredientSubmitContainer">
             <div id="ingredientContainer">
               <div id="ingredientInputContainer">
-                <input placeholder="Ingredient" type="text" />
-                <input placeholder="Quantity" type="text" />
+                <input
+                  name="Ingredient"
+                  placeholder="Ingredient"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                  name="Quantity"
+                  placeholder="Quantity"
+                  type="text"
+                  value={quantity}
+                  onChange={(e) => setQuantity(e.target.value)}
+                />
               </div>
               <div>
-                <ul>
-                  <li>Beans</li>
-                  <li>Not Beans</li>
-                  <li>Could be Beans</li>
-                  <li>definitely Not Beans</li>
-                  <li>Possibly Beans</li>
-                  <li>Absolutely Beans</li>
-                </ul>
+                <ul>{ingredientsList}</ul>
               </div>
             </div>
-            <button id="addIngredientButton">Add Another</button>
+            <button
+              id="addIngredientButton"
+              type="button"
+              onClick={addIngredientHandler}
+            >
+              Add Another
+            </button>
           </div>
           <div id="instructionsInputContainer">
             <textarea
@@ -111,7 +159,9 @@ const NewRecipeScreen = () => {
               value={formik.values.instructions}
             />
           </div>
-          <button id="submitRecipeButton" type="submit">Save</button>
+          <button id="submitRecipeButton" type="submit">
+            Save
+          </button>
         </form>
       </div>
       {/* Here you will have a large form. Be prepared, part 4 will have you build this form in detail, and part 5 will have you style it. Do your best! */}
